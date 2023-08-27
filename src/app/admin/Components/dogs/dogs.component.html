@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="dogs">
+    <h1 class="ti">Dogs</h1>
+    <div class="">
+      <img  *ngIf="randomImage !== ''" [src]="randomImage" alt="Imagen de perro">
+      <br>
+      <button class="button btn btn-primary btn-hover" (click)="getRandomImage()">Obtener imagen de perro</button>
+    </div>
+  </div>
+</div>
