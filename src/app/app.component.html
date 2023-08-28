@@ -1,25 +1,28 @@
-<div class="container" style="max-width: 550px">
-  <h2 class="text-center mb-5">Angular Login with Google</h2>
-  <div *ngIf="isLoggedin === true">
-    <div class="form-group">
-      <label>First Name</label>
-      <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+<div class="google">
+  <div class="container" style="max-width: 550px">
+    <h2 class="text-center mb-5">Angular Login with Google</h2>
+    <div *ngIf="isLoggedin === true">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+      </div>
+      <div class="form-group">
+        <br>
+        <label>Last Name</label>
+        <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
+      </div>
+      <div class="form-group">
+        <br>
+        <label>Email</label>
+        <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
+        <br>
+      </div>
+      <button class="center" type="button" (click)="logOut()" class="btn btn-danger">Log Out</button>
+      <br><br>
+      <input type="text" [(ngModel)]="inputText">
+      <p>Texto sin espacios: {{ inputText }}</p>
     </div>
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
-      <br>
-    </div>
-    <button class="center" type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
-    <br><br>
-    <input type="text" [(ngModel)]="inputText">
-    <p>Texto sin espacios: {{ inputText }}</p>
+    <asl-google-signin-button (click)="loginWithGoogle()"></asl-google-signin-button>
   </div>
 </div>
-<asl-google-signin-button (click)="loginWithGoogle()"></asl-google-signin-button>
-
 <router-outlet></router-outlet>
